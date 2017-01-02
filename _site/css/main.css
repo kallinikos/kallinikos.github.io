@@ -1,0 +1,118 @@
+@charset "UTF-8";
+@import url(monokai.css);
+body {
+  background-color: #f6f9fc;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+#markdown-toc::before {
+  content: "Περιεχόμενα";
+  font-weight: bold; }
+
+#markdown-toc ul {
+  list-style: decimal; }
+
+#markdown-toc {
+  border: 1px solid #aaa;
+  padding: 1.5em;
+  padding-left: 2em;
+  margin-right: 2em;
+  list-style: decimal;
+  display: table;
+  display: inline-block;
+  max-width: 30em;
+  font-size: 12px;
+  background-color: #f9f9f9;
+  line-height: 1.8; }
+
+a:link {
+  color: #0645ad;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+a:active {
+  color: #faa700; }
+
+a:visited {
+  color: #0b0080; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  background: none;
+  font-weight: normal;
+  margin: 0;
+  overflow: hidden;
+  padding-top: .5em;
+  padding-bottom: .17em;
+  border-bottom: 1px solid #aaa; }
+
+h1 {
+  font-size: 188%; }
+
+h2 {
+  font-size: 150%; }
+
+h3, h4, h5, h6 {
+  border-bottom: none;
+  font-weight: bold; }
+
+h3 {
+  font-size: 128%; }
+
+h4 {
+  font-size: 116%; }
+
+h5 {
+  font-size: 108%; }
+
+h6 {
+  font-size: 100%; }
+
+h1, h2 {
+  margin-bottom: .6em; }
+
+h3, h4, h5 {
+  margin-bottom: .3em; }
+
+table {
+  border-collapse: collapse;
+  margin: 1em 0; }
+
+table, th, td {
+  border: 1px solid #aaa;
+  padding: 0.2em; }
+
+.content {
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-right: 1em;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: white; }
+
+#header {
+  padding-left: 1em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  font-family: serif; }
+
+#logo {
+  font-size: 3em;
+  font-weight: bold; }
+
+#logo a {
+  text-decoration: none;
+  color: black; }
+
+#motto {
+  font-size: 0.8em;
+  color: #797979; }
+
+code.highlighter-rouge {
+  border: 1px solid #dddddd;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  padding: 2px 4px 0px;
+  font-size: 0.9em; }

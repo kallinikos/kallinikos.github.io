@@ -1,0 +1,13 @@
+title: Καλλίνικος
+description: Ο Καλλίνικος είναι μια πλατφόρμα με αλγορίθμους η οποία δημιουργήθηκε με σκοπό την διευκόλυνση της εξάσκησης των ελληνόγλωσσων μαθητών για τους διαγωνισμούς πληροφορικής.
+timezone: Europe/Athens
+permalink: /:title
+highlighter: rouge
+gems:
+  - jekyll-redirect-from
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude: [templates, README.md]

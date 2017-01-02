@@ -1,0 +1,46 @@
+---
+layout: layout
+title: Αρχική
+---
+
+<div class="content">
+  <h1>Αρχική</h1>
+  Ο Καλλίνικος είναι μια πλατφόρμα με αλγορίθμους η οποία δημιουργήθηκε με σκοπό την διευκόλυνση της εξάσκησης των ελληνόγλωσσων μαθητών για τους διαγωνισμούς πληροφορικής. Είναι ανοιχτού κώδικα και λειτουργεί σαν wiki μέσω του <a href="https://github.com">Github</a>. Εάν θέλετε να συνεισφέρετε στον Καλλίνικο, πατήστε <a href="https://github.com/kallinikos/kallinikos.github.io">εδώ</a>.
+  <div class="related">
+    <h2>Κατηγορίες</h2>
+    {% for tag in site.tags %}
+      <h3>{{tag | first }} ({{tag | last | size }})</h3><br>
+      {% for posts in tag %}
+	{% for post in posts %}
+	  {% assign content = post.content | strip_newlines %}
+	  {% if content != "" %}
+	    <h4 style="display: inline"><a href="{{ post.url }}">{{ post.title }}</a></h4> (Βαθμός δυσκολίας: {{ post.category }}/10) <br><br>
+	  {% endif %}
+	{% endfor %}
+      {% endfor %}
+    {% endfor %} 
+    </ul>
+    
+    <h2>Σειρά βαθμού δυσκολίας</h2>
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+      {% for posts in category %}
+        {% for post in posts %}
+	  {% assign content = post.content | strip_newlines %}
+	  {% if content != "" %}
+	    <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+	  {% endif %}
+	{% endfor %}
+      {% endfor %}
+    {% endfor %}
+      
+    <h2>Τελευταίες προσθήκες</h2>
+    <ul>
+      {% for post in site.posts limit:5 %}
+      <li>
+	<span>{{ post.date | date: "%D" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
