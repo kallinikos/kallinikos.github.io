@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="560px" height="1040px" viewBox="0 0 560 1040px" enable-background="new 0 0 560 1040px" xml:space="preserve">
+
+<line fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="20" x1="240" y1="0" x2="240" y2="1040"/>
+
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="40,160 80,80 160,160 120,240 "/>
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="160,160 200,240 "/>
+<circle fill="#FFFFF5" stroke="#8B4C29" stroke-width="2" cx="80" cy="80" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B4C29" stroke-width="2" cx="40" cy="160" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B4C29" stroke-width="2" cx="160" cy="160" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B4C29" stroke-width="2" cx="120" cy="240" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B4C29" stroke-width="2" cx="200" cy="240" r="25"/>
+<text x="57" y="85" font-family="Liberation Serif" font-size="20">13,17</text>
+<text x="17" y="165" font-family="Liberation Serif" font-size="20">10,26</text>
+<text x="137" y="165" font-family="Liberation Serif" font-size="20">25,19</text>
+<text x="97" y="245" font-family="Liberation Serif" font-size="20">17,20</text>
+<text x="177" y="245" font-family="Liberation Serif" font-size="20">30,25</text>
+
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="40,480 80,400 120,480 "/>
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="320,400 280,480"/>
+<polyline fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="6" points="320,400 360,480"/>
+<circle fill="#FFFFF5" stroke="#8B4C29" stroke-width="2" cx="80" cy="400" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B4C29" stroke-width="2" cx="40" cy="480" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B4C29" stroke-width="2" cx="120" cy="480" r="25"/>
+<circle fill="#FFFFF5" stroke="#336600" stroke-width="2" cx="320" cy="400" r="25"/>
+<circle fill="#FFFFF5" stroke="#336600" stroke-width="2" cx="280" cy="480" r="25"/>
+<circle fill="#FFFFF5" stroke="#000000" stroke-width="2" stroke-dasharray="6" cx="360" cy="480" r="25"/>
+<text x="57" y="405" font-family="Liberation Serif" font-size="20">25,19</text>
+<text x="17" y="485" font-family="Liberation Serif" font-size="20">17,20</text>
+<text x="97" y="485" font-family="Liberation Serif" font-size="20">30,25</text>
+<text x="297" y="405" font-family="Liberation Serif" font-size="20">13,17</text>
+<text x="257" y="485" font-family="Liberation Serif" font-size="20">10,26</text>
+
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="320,640 280,720"/>
+<polyline fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="6" points="320,640 360,720"/>
+<polyline fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="6" points="480,640 440,720"/>
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="480,640 520,720"/>
+<circle fill="#FFFFF5" stroke="#8B4C29" stroke-width="2" cx="40" cy="640" r="25"/>
+<circle fill="#FFFFF5" stroke="#336600" stroke-width="2" cx="320" cy="640" r="25"/>
+<circle fill="#FFFFF5" stroke="#336600" stroke-width="2" cx="280" cy="720" r="25"/>
+<circle fill="#FFFFF5" stroke="#000000" stroke-width="2" stroke-dasharray="6" cx="360" cy="720" r="25"/>
+<circle fill="#FFFFF5" stroke="#000066" stroke-width="2" cx="480" cy="640" r="25"/>
+<circle fill="#FFFFF5" stroke="#000000" stroke-width="2" stroke-dasharray="6" cx="440" cy="720" r="25"/>
+<circle fill="#FFFFF5" stroke="#000066" stroke-width="2" cx="520" cy="720" r="25"/>
+<text x="17" y="645" font-family="Liberation Serif" font-size="20">17,20</text>
+<text x="297" y="645" font-family="Liberation Serif" font-size="20">13,17</text>
+<text x="257" y="725" font-family="Liberation Serif" font-size="20">10,26</text>
+<text x="457" y="645" font-family="Liberation Serif" font-size="20">25,19</text>
+<text x="497" y="725" font-family="Liberation Serif" font-size="20">30,25</text>
+
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="280,960 320,880 360,960"/>
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="480,880 520,960"/>
+<circle fill="#FFFFF5" stroke="#336600" stroke-width="2" cx="320" cy="880" r="25"/>
+<circle fill="#FFFFF5" stroke="#336600" stroke-width="2" cx="280" cy="960" r="25"/>
+<circle fill="#FFFFF5" stroke="#336600" stroke-width="2" cx="360" cy="960" r="25"/>
+<circle fill="#FFFFF5" stroke="#000066" stroke-width="2" cx="480" cy="880" r="25"/>
+<circle fill="#FFFFF5" stroke="#000066" stroke-width="2" cx="520" cy="960" r="25"/>
+<text x="297" y="885" font-family="Liberation Serif" font-size="20">13,17</text>
+<text x="257" y="965" font-family="Liberation Serif" font-size="20">10,26</text>
+<text x="337" y="965" font-family="Liberation Serif" font-size="20">17,20</text>
+<text x="457" y="885" font-family="Liberation Serif" font-size="20">25,19</text>
+<text x="497" y="965" font-family="Liberation Serif" font-size="20">30,25</text>
+</svg>
