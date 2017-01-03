@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="440px" height="440px" viewBox="0 0 440 440" enable-background="new 0 0 440 440" xml:space="preserve">
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="40,320 80,240 160,160 200,80 400,160 280,240 360,320 320,400 "/>
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="80,240 120,320 "/>
+<polyline fill="none" stroke="#E4BC96" stroke-width="4" points="280,240 240,320 "/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="200" cy="80" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="160" cy="160" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="80" cy="240" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="40" cy="320" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="120" cy="320" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="400" cy="160" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="280" cy="240" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="240" cy="320" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="360" cy="320" r="25"/>
+<circle fill="#FFFFF5" stroke="#8B5C29" stroke-width="2" cx="320" cy="400" r="25"/>
+<text x="182.5" y="85" font-family="Liberation Serif" font-size="20">11,2</text>
+<text x="147" y="165" font-family="Liberation Serif" font-size="20">8,5</text>
+<text x="62.5" y="245" font-family="Liberation Serif" font-size="20">5,20</text>
+<text x="22.5" y="325" font-family="Liberation Serif" font-size="20">3,54</text>
+<text x="102.5" y="325" font-family="Liberation Serif" font-size="20">6,77</text>
+<text x="382.5" y="165" font-family="Liberation Serif" font-size="20">19,4</text>
+<text x="257" y="245" font-family="Liberation Serif" font-size="20">18,22</text>
+<text x="217" y="325" font-family="Liberation Serif" font-size="20">15,85</text>
+<text x="337" y="325" font-family="Liberation Serif" font-size="20">25,33</text>
+<text x="297" y="405" font-family="Liberation Serif" font-size="20">23,45</text>
+</svg>
