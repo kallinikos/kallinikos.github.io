@@ -12,8 +12,8 @@ title: Αρχική
       <h3>{{tag | first }} ({{tag | last | size }})</h3><br>
       {% for posts in tag %}
 	{% for post in posts %}
-	  {% assign content = post.content | strip_newlines %}
-	  {% if content != "" %}
+	  {% assign title = post.title | strip_newlines %}
+	  {% if title != "" %}
 	    <h4 style="display: inline"><a href="{{ post.url }}">{{ post.title }}</a></h4> (Βαθμός δυσκολίας: {{ post.category }}/10) <br><br>
 	  {% endif %}
 	{% endfor %}
@@ -22,16 +22,50 @@ title: Αρχική
     </ul>
     
     <h2>Σειρά βαθμού δυσκολίας</h2>
+    <h3>Εύκολα</h3>
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
-      {% for posts in category %}
-        {% for post in posts %}
-	  {% assign content = post.content | strip_newlines %}
-	  {% if content != "" %}
-	    <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-	  {% endif %}
-	{% endfor %}
-      {% endfor %}
+      {% assign title = category | first | strip_newlines %}
+      {% if title <= "3" %}
+        {% for posts in category %}
+          {% for post in posts %}
+       	    {% assign title = post.title | strip_newlines %}
+	    {% if title != "" %}
+	      <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+	    {% endif %}
+	  {% endfor %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    <h3>Μέτρια</h3>
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+      {% assign title = category | first | strip_newlines %}
+      {% if title > "3" and title <= "7" %}
+        {% for posts in category %}
+          {% for post in posts %}
+       	    {% assign title = post.title | strip_newlines %}
+	    {% if title != "" %}
+	      <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+	    {% endif %}
+	  {% endfor %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    <h3>Δύσκολα</h3>
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+      {% assign title = category | first | strip_newlines %}
+      {% if title > "7"%}
+        {% for posts in category %}
+          {% for post in posts %}
+       	    {% assign title = post.title | strip_newlines %}
+	    {% if title != "" %}
+	      <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+	    {% endif %}
+	  {% endfor %}
+        {% endfor %}
+      {% endif %}
     {% endfor %}
       
     <h2>Τελευταίες προσθήκες</h2>
