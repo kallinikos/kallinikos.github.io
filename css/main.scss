@@ -13,7 +13,6 @@ body {
   font-weight: bold;
 }
 
-
 #markdown-toc ul {
   list-style: decimal;
 }
@@ -107,12 +106,13 @@ table, th, td {
 }
 
 .content {
-  margin-left: 1em;
-  margin-top: 1em;
   margin-right: 1em;
   border: 1px solid #ccc;
   padding: 10px;
-  background-color: white;
+  background-color: #ffffff;
+  display: table;
+
+  margin-left: 1em; // REMOVE THIS WHEN ADDING SIDEBAR
 }
 
 #header {
@@ -144,4 +144,27 @@ code.highlighter-rouge {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   padding: 2px 4px 0px;
   font-size: 0.9em;
+}
+
+#sidebar {
+  border: 1px solid #ccc;
+  padding: 1.5em;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: table;
+  display: inline-block;
+  max-width: 10em;
+  font-size: 12px;
+  background-color: #ffffff;
+  line-height: 1.5;
+  float: left;
+
+  display: none; // CHANGE THIS TO ADD SIDEBAR
+}
+
+#sidebar::before {
+  content: "Πλοήγηση";
+  font-weight: bold;
+  display: block;
+  padding-bottom: 1em;
 }
