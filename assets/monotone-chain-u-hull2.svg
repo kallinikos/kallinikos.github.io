@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="440px" height="440px" viewBox="0 0 440 440" enable-background="new 0 0 440 440" xml:space="preserve">
+<polyline fill="none" stroke="green" stroke-width="3" points="40,350 40,100 80,100 250,120 350,170"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="40" cy="350"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="40" cy="200"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="40" cy="100"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="80" cy="100"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="150" cy="120"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="250" cy="120"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="350" cy="170"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="350" cy="300"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="200" cy="200"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="100" cy="260"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="70" cy="380"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="200" cy="400"/>
+<circle fill="#000000" stroke="#000000" r="3" cx="300" cy="350"/>
+</svg>
