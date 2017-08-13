@@ -1,7 +1,7 @@
 ---
 title: "Suffix Automata"
 layout: post
-tags: [αλφαριθμητικά, θεωρία γράφων]
+tags: [Αλφαριθμητικά, Θεωρία Γράφων]
 category: 9
 comments: true
 ---
