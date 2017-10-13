@@ -28,7 +28,7 @@ a:visited {
   color: #0b0080;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   color: black;
   background: none;
   font-weight: normal;
@@ -37,10 +37,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: .5rem;
   padding-bottom: .17rem;
   border-bottom: 1px solid #aaa;
-}
-
-h1 {
-  font-size: 188%;
 }
 
 h2 {
@@ -68,7 +64,7 @@ h6 {
   font-size: 100%;
 }
 
-h1, h2 {
+h2 {
   margin-bottom: .6rem;
 }
 
@@ -145,6 +141,25 @@ pre {
 section {
   width: 64em;
   margin: 0 auto;
+}
+
+h1 {
+  color: black;
+  background: none;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  padding-top: .5rem;
+  padding-bottom: .17rem;
+  text-align: center;
+}
+
+h1 ~ p {
+  font-size: 1.25rem;
+}
+
+#markdown-toc ~ p {
+  font-size: 1rem;
 }
 
 #markdown-toc::before {
