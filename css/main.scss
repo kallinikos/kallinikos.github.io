@@ -2,10 +2,13 @@
 ---
 
 @import url(monokai.css);
+@import url(normalize.min.css);
 
 body {
   background-color: #f6f9fc;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 #markdown-toc::before {
@@ -19,13 +22,13 @@ body {
 
 #markdown-toc {
   border: 1px solid #aaa;
-  padding: 1.5em;
-  padding-left: 2em;
-  margin-right: 2em;
+  padding: 1.5rem;
+  padding-left: 2rem;
+  margin-right: 2rem;
   list-style: decimal;
   display: table;
   display: inline-block;
-  max-width: 30em;
+  max-width: 30rem;
   font-size: 12px;
   background-color: #f9f9f9;
   line-height: 1.8;
@@ -53,8 +56,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   margin: 0;
   overflow: hidden;
-  padding-top: .5em;
-  padding-bottom: .17em;
+  padding-top: .5rem;
+  padding-bottom: .17rem;
   border-bottom: 1px solid #aaa;
 }
 
@@ -88,42 +91,42 @@ h6 {
 }
 
 h1, h2 {
-  margin-bottom: .6em;
+  margin-bottom: .6rem;
 }
 
 h3, h4, h5 {
-  margin-bottom: .3em;
+  margin-bottom: .3rem;
 }
 
 table {
   border-collapse: collapse;
-  margin: 1em 0;
+  margin: 1rem 0;
 }
 
 table, th, td {
   border: 1px solid #aaa;
-  padding: 0.2em;
+  padding: 0.2rem;
 }
 
 .content {
-  margin-right: 1em;
+  margin-right: 1rem;
   border: 1px solid #ccc;
   padding: 10px;
   background-color: #ffffff;
   display: table;
 
-  margin-left: 1em; // REMOVE THIS WHEN ADDING SIDEBAR
+  margin-left: 1rem; // REMOVE THIS WHEN ADDING SIDEBAR
 }
 
 #header {
-  padding-left: 1em;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+  padding-left: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   font-family: serif;
 }
 
 #logo {
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -133,7 +136,7 @@ table, th, td {
 }
 
 #motto {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   color: #797979;
 }
 
@@ -143,17 +146,17 @@ code.highlighter-rouge {
   border-radius: 3px;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   padding: 2px 4px 0px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 #sidebar {
   border: 1px solid #ccc;
-  padding: 1.5em;
-  margin-left: 1em;
-  margin-right: 1em;
+  padding: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   display: table;
   display: inline-block;
-  max-width: 10em;
+  max-width: 10rem;
   font-size: 12px;
   background-color: #ffffff;
   line-height: 1.5;
@@ -166,5 +169,5 @@ code.highlighter-rouge {
   content: "Πλοήγηση";
   font-weight: bold;
   display: block;
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
 }
