@@ -11,29 +11,6 @@ body {
   line-height: 1.5;
 }
 
-#markdown-toc::before {
-  content: "Περιεχόμενα";
-  font-weight: bold;
-}
-
-#markdown-toc ul {
-  list-style: decimal;
-}
-
-#markdown-toc {
-  border: 1px solid #aaa;
-  padding: 1.5rem;
-  padding-left: 2rem;
-  margin-right: 2rem;
-  list-style: decimal;
-  display: table;
-  display: inline-block;
-  max-width: 30rem;
-  font-size: 12px;
-  background-color: #f9f9f9;
-  line-height: 1.8;
-}
-
 a:link {
   color: #0645ad;
   text-decoration: none;
@@ -109,35 +86,73 @@ table, th, td {
 }
 
 .content {
-  margin-right: 1rem;
-  border: 1px solid #ccc;
-  padding: 10px;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  padding: 2rem;
   background-color: #ffffff;
-  display: table;
 
-  margin-left: 1rem; // REMOVE THIS WHEN ADDING SIDEBAR
+/* ONLY WHEN USING SIDEBAR
+  margin-right: 1rem;
+  margin-left: 0;
+*/
 }
 
 #header {
-  padding-left: 1rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  font-family: serif;
-}
-
-#logo {
-  font-size: 3rem;
-  font-weight: bold;
+  background: #4079A4 url(/assets/header-bg.jpg) center center no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 -10px 40px -5px rgba(0, 0, 0, .75);
+  padding: 2.25rem 0 3rem;
+  width: 100%;
+  text-align: center;
 }
 
 #logo a {
+  color: #F6F6F6;
+  font-family: "GFS Didot", sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  letter-spacing: 6px;
+  line-height: 1;
   text-decoration: none;
-  color: black;
+  text-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .8);
+  text-transform: lowercase;
+}
+
+#logo a:hover {
+  text-shadow: .25rem .25rem .5rem rgba(0, 0, 0, 1);
 }
 
 #motto {
-  font-size: 0.8rem;
-  color: #797979;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1;
+  margin-top: .5em;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .8);
+}
+
+#markdown-toc::before {
+  content: "Περιεχόμενα";
+  font-weight: bold;
+}
+
+#markdown-toc ul {
+  list-style: decimal;
+}
+
+#markdown-toc {
+  border: 1px solid #aaa;
+  padding: 1.5rem;
+  padding-left: 2rem;
+  margin-right: 2rem;
+  list-style: decimal;
+  display: table;
+  display: inline-block;
+  max-width: 30rem;
+  font-size: 12px;
+  background-color: #f9f9f9;
+  line-height: 1.8;
 }
 
 code.highlighter-rouge {
