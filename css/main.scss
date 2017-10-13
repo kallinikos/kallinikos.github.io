@@ -163,8 +163,12 @@ h1 ~ p {
 }
 
 #markdown-toc::before {
-  content: "Περιεχόμενα";
+  content: "ΠΕΡΙΕΧΟΜΕΝΑ";
+  color: #111;
+  font-size: 1.25em;
   font-weight: bold;
+  line-height: 1.8;
+  margin-left: -1em;
 }
 
 #markdown-toc ul {
