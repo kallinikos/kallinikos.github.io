@@ -173,20 +173,28 @@ h1 ~ p {
 
 #markdown-toc ul {
   list-style: decimal;
+  padding-left: 2rem;
 }
 
 #markdown-toc {
-  border: 1px solid #aaa;
-  padding: 1.5rem;
-  padding-left: 2rem;
-  margin-right: 2rem;
+  background-color: #F8F8F8;
+  border-top: 2px solid #777;
+  border-bottom: 2px solid #777;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  box-sizing: border-box;
   list-style: decimal;
   display: table;
   display: inline-block;
-  max-width: 30rem;
-  font-size: 12px;
-  background-color: #f9f9f9;
-  line-height: 1.8;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#markdown-toc li {
+  max-width: 30em;
 }
 
 code.highlighter-rouge {
@@ -194,8 +202,8 @@ code.highlighter-rouge {
   background-color: #f8f8f8;
   border-radius: 3px;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
-  padding: 2px 4px 0px;
-  font-size: 0.9rem;
+  padding: .1rem .2rem 0;
+  font-size: .9rem;
 }
 
 #sidebar {
@@ -206,7 +214,7 @@ code.highlighter-rouge {
   display: table;
   display: inline-block;
   max-width: 10rem;
-  font-size: 12px;
+  font-size: 12rem;
   background-color: #ffffff;
   line-height: 1.5;
   float: left;
@@ -219,4 +227,8 @@ code.highlighter-rouge {
   font-weight: bold;
   display: block;
   padding-bottom: 1rem;
+}
+
+#MathJax_Message {
+  display: none;
 }
