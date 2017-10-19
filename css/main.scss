@@ -2,30 +2,41 @@
 ---
 
 @import url(monokai.css);
-@import url(normalize.min.css);
 
-body {
-  background-color: #f6f9fd;
-  background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23e6e9ed' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
-  font-family: "Open Sans", sans-serif;
+html {
   font-size: 16px;
   line-height: 1.5;
 }
 
+body {
+  background-color: #f6f9fd;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  overflow-y: scroll;
+}
+
+/* under 991px screen width, section has 100% width, so the pattern won't be visible */
+@media (min-width: 992px) {
+  body {
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23e6e9ed' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+}
+
 a:link {
-  color: #0645ad;
+  color: #4079A4;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-a:active {
-  color: #faa700;
+a:visited {
+  color: #4079A4;
 }
 
-a:visited {
-  color: #0b0080;
+a:active {
+  color: #094572;
 }
 
 h2, h3, h4, h5, h6 {
@@ -82,7 +93,24 @@ table, th, td {
   padding: .2rem;
 }
 
+thead tr {
+  background-color: #CCC;
+}
+
+thead th {
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #F4F4F4;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
 p {
+  margin: 1em 0;
   text-align: justify;
 }
 
@@ -91,10 +119,21 @@ pre {
   word-wrap: break-word;
 }
 
+/* remove weird webkit margins */
+ul.list-unstyled {
+  margin: 0;
+}
+
+/* responsive images that scale with the parent element (mimics bootstrap .img-fluid) */
+.content img {
+  max-width: 100%;
+  height: auto;
+}
+
 .content {
   border-left: 1px solid #CCC;
   border-right: 1px solid #CCC;
-  padding: 2rem;
+  padding: 1.5rem 1rem 1rem 1rem;
   background-color: #ffffff;
 
 /* ONLY WHEN USING SIDEBAR
@@ -103,19 +142,37 @@ pre {
 */
 }
 
-#header {
+@media (min-width: 992px) {
+  .content {
+    padding: 2rem 2rem 1rem 2rem;
+  }
+}
+
+header {
   background: #4079A4 url(/assets/header-bg.jpg) center center no-repeat;
   background-size: cover;
   box-shadow: inset 0 -10px 40px -5px rgba(0, 0, 0, .75);
-  padding: 2.25rem 0 3rem;
+  padding: .5rem 0 .9rem;
   width: 100%;
   text-align: center;
+}
+
+@media (min-width: 576px) {
+  header {
+    padding: 1.25rem 0 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    padding: 2.25rem 0 3rem;
+  }
 }
 
 #logo a {
   color: #F6F6F6;
   font-family: "GFS Didot", sans-serif;
-  font-size: 6rem;
+  font-size: 3rem;
   font-weight: bold;
   letter-spacing: 6px;
   line-height: 1;
@@ -124,38 +181,91 @@ pre {
   text-transform: lowercase;
 }
 
+@media (min-width: 576px) {
+  #logo a {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #logo a {
+    font-size: 6rem;
+  }
+}
+
 #logo a:hover {
   text-shadow: .25rem .25rem .5rem rgba(0, 0, 0, 1);
 }
 
 #motto {
-  font-size: 1.25rem;
-  font-weight: bold;
-  font-style: italic;
-  line-height: 1;
-  margin-top: .5em;
-  color: rgba(255, 255, 255, 1);
-  text-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .8);
+  display: none;
+}
+
+@media (min-width: 576px) {
+  #motto {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1;
+    margin-top: .5em;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .8);
+  }
+}
+
+@media (min-width: 992px) {
+  #motto {
+    font-size: 1.25rem;
+  }
 }
 
 section {
-  width: 64em;
+  width: 80%;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  section {
+    width: 100%;
+  }
 }
 
 h1 {
   color: black;
   background: none;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
   overflow: hidden;
-  padding-top: .5rem;
+  padding-top: 0;
   padding-bottom: .17rem;
   text-align: center;
 }
 
-h1 ~ p {
-  font-size: 1.25rem;
+@media (min-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+#post > h1:first-child a.home {
+  color: black;
+}
+
+#post > h1:first-child .fa-caret-right {
+  margin: 0 1rem;
+}
+
+@media (min-width: 992px) {
+  h1 ~ p {
+    font-size: 1.25rem;
+  }
+}
+
+p.normal {
+  font-size: 1rem;
 }
 
 #markdown-toc ~ p {
@@ -206,7 +316,7 @@ code.highlighter-rouge {
   font-size: .9rem;
 }
 
-#sidebar {
+aside {
   border: 1px solid #ccc;
   padding: 1.5rem;
   margin-left: 1rem;
@@ -222,11 +332,26 @@ code.highlighter-rouge {
   display: none; // CHANGE THIS TO ADD SIDEBAR
 }
 
-#sidebar::before {
+aside::before {
   content: "Πλοήγηση";
   font-weight: bold;
   display: block;
   padding-bottom: 1rem;
+}
+
+footer {
+  border-top: 1px dashed #888;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+footer a:hover {
+  color: #094572;
+  text-decoration: none;
+}
+
+#disqus_thread {
+  margin-bottom: 1rem;
 }
 
 #MathJax_Message {
