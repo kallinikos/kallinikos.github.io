@@ -3,63 +3,51 @@
 
 @import url(monokai.css);
 
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 body {
-  background-color: #f6f9fc;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f6f9fd;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  overflow-y: scroll;
 }
 
-#markdown-toc::before {
-  content: "Περιεχόμενα";
-  font-weight: bold;
-}
-
-#markdown-toc ul {
-  list-style: decimal;
-}
-
-#markdown-toc {
-  border: 1px solid #aaa;
-  padding: 1.5em;
-  padding-left: 2em;
-  margin-right: 2em;
-  list-style: decimal;
-  display: table;
-  display: inline-block;
-  max-width: 30em;
-  font-size: 12px;
-  background-color: #f9f9f9;
-  line-height: 1.8;
+/* under 991px screen width, section has 100% width, so the pattern won't be visible */
+@media (min-width: 992px) {
+  body {
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23e6e9ed' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
 }
 
 a:link {
-  color: #0645ad;
+  color: #4079A4;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-a:active {
-  color: #faa700;
-}
-
 a:visited {
-  color: #0b0080;
+  color: #4079A4;
 }
 
-h1, h2, h3, h4, h5, h6 {
+a:active {
+  color: #094572;
+}
+
+h2, h3, h4, h5, h6 {
   color: black;
   background: none;
   font-weight: normal;
   margin: 0;
   overflow: hidden;
-  padding-top: .5em;
-  padding-bottom: .17em;
+  padding-top: .5rem;
+  padding-bottom: .17rem;
   border-bottom: 1px solid #aaa;
-}
-
-h1 {
-  font-size: 188%;
 }
 
 h2 {
@@ -87,54 +75,236 @@ h6 {
   font-size: 100%;
 }
 
-h1, h2 {
-  margin-bottom: .6em;
+h2 {
+  margin-bottom: .6rem;
 }
 
 h3, h4, h5 {
-  margin-bottom: .3em;
+  margin-bottom: .3rem;
 }
 
 table {
   border-collapse: collapse;
-  margin: 1em 0;
+  margin: 1rem 0;
 }
 
 table, th, td {
   border: 1px solid #aaa;
-  padding: 0.2em;
+  padding: .2rem;
+}
+
+thead tr {
+  background-color: #CCC;
+}
+
+thead th {
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #F4F4F4;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+p {
+  margin: 1em 0;
+  text-align: justify;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* remove weird webkit margins */
+ul.list-unstyled {
+  margin: 0;
+}
+
+/* responsive images that scale with the parent element (mimics bootstrap .img-fluid) */
+.content img {
+  max-width: 100%;
+  height: auto;
 }
 
 .content {
-  margin-right: 1em;
-  border: 1px solid #ccc;
-  padding: 10px;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  padding: 1.5rem 1rem 1rem 1rem;
   background-color: #ffffff;
-  display: table;
 
-  margin-left: 1em; // REMOVE THIS WHEN ADDING SIDEBAR
+/* ONLY WHEN USING SIDEBAR
+  margin-right: 1rem;
+  margin-left: 0;
+*/
 }
 
-#header {
-  padding-left: 1em;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  font-family: serif;
+@media (min-width: 992px) {
+  .content {
+    padding: 2rem 2rem 1rem 2rem;
+  }
 }
 
-#logo {
-  font-size: 3em;
-  font-weight: bold;
+header {
+  background: #4079A4 url(/assets/header-bg.jpg) center center no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 -10px 40px -5px rgba(0, 0, 0, .75);
+  padding: .5rem 0 .9rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  header {
+    padding: 1.25rem 0 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    padding: 2.25rem 0 3rem;
+  }
 }
 
 #logo a {
+  color: #F6F6F6;
+  font-family: "GFS Didot", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 6px;
+  line-height: 1;
   text-decoration: none;
-  color: black;
+  text-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .8);
+  text-transform: lowercase;
+}
+
+@media (min-width: 576px) {
+  #logo a {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #logo a {
+    font-size: 6rem;
+  }
+}
+
+#logo a:hover {
+  text-shadow: .25rem .25rem .5rem rgba(0, 0, 0, 1);
 }
 
 #motto {
-  font-size: 0.8em;
-  color: #797979;
+  display: none;
+}
+
+@media (min-width: 576px) {
+  #motto {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1;
+    margin-top: .5em;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .8);
+  }
+}
+
+@media (min-width: 992px) {
+  #motto {
+    font-size: 1.25rem;
+  }
+}
+
+section {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  section {
+    width: 100%;
+  }
+}
+
+h1 {
+  color: black;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: .17rem;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+#post > h1:first-child a.home {
+  color: black;
+}
+
+#post > h1:first-child .fa-caret-right {
+  margin: 0 1rem;
+}
+
+@media (min-width: 992px) {
+  h1 ~ p {
+    font-size: 1.25rem;
+  }
+}
+
+p.normal {
+  font-size: 1rem;
+}
+
+#markdown-toc ~ p {
+  font-size: 1rem;
+}
+
+#markdown-toc::before {
+  content: "ΠΕΡΙΕΧΟΜΕΝΑ";
+  color: #111;
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1.8;
+  margin-left: -1em;
+}
+
+#markdown-toc ul {
+  list-style: decimal;
+  padding-left: 2rem;
+}
+
+#markdown-toc {
+  background-color: #F8F8F8;
+  border-top: 2px solid #777;
+  border-bottom: 2px solid #777;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  box-sizing: border-box;
+  list-style: decimal;
+  display: table;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#markdown-toc li {
+  max-width: 30em;
 }
 
 code.highlighter-rouge {
@@ -142,19 +312,19 @@ code.highlighter-rouge {
   background-color: #f8f8f8;
   border-radius: 3px;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
-  padding: 2px 4px 0px;
-  font-size: 0.9em;
+  padding: .1rem .2rem 0;
+  font-size: .9rem;
 }
 
-#sidebar {
+aside {
   border: 1px solid #ccc;
-  padding: 1.5em;
-  margin-left: 1em;
-  margin-right: 1em;
+  padding: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   display: table;
   display: inline-block;
-  max-width: 10em;
-  font-size: 12px;
+  max-width: 10rem;
+  font-size: 1rem;
   background-color: #ffffff;
   line-height: 1.5;
   float: left;
@@ -162,9 +332,272 @@ code.highlighter-rouge {
   display: none; // CHANGE THIS TO ADD SIDEBAR
 }
 
-#sidebar::before {
+aside::before {
   content: "Πλοήγηση";
   font-weight: bold;
   display: block;
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
+}
+
+footer {
+  border-top: 1px dashed #888;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+footer a:hover {
+  color: #094572;
+  text-decoration: none;
+}
+
+#disqus_thread {
+  margin-bottom: 1rem;
+}
+
+#MathJax_Message {
+  display: none;
+}
+
+/* HOME PAGE TABS */
+.nav-pills {
+  box-shadow: inset 0 0 1rem -5px rgba(0, 0, 0, .5);
+  background-color: #F6F6F6;
+  border-radius: .25rem;
+  margin: 1rem 0;
+  display: block;
+}
+
+@media (min-width: 576px) {
+  .nav-pills {
+    display: flex;
+  }
+}
+
+.nav-pills .nav-link.active,
+.show > .nav-pills .nav-link {
+  background-color: #4079A4;
+}
+
+.related > div {
+  margin-bottom: 1rem;
+}
+
+/* because last row's categories already have a bottom margin of 1.1rem,
+   remove margin from container and distribute it to its children */
+.related > div.tab-content {
+  margin-bottom: 0;
+}
+
+#categories {
+  margin-bottom: 0;
+}
+
+#difficulty {
+  margin-bottom: 1.1rem;
+}
+
+#recent .columns {
+  column-width: 24em;
+}
+
+#recent li:before {
+  content: '\25b8';
+  margin: 0 .4em;
+}
+
+#recent li {
+  line-height: 1.5rem;
+}
+
+#recent li em {
+  font-size: .8rem;
+  vertical-align: middle;
+}
+
+#recent li a {
+  vertical-align: middle;
+}
+
+#recent ul li:first-child {
+  margin-top: 0;
+}
+
+category {
+  font-size: .9rem;
+  margin-bottom: 1.1rem;
+  width: 100%;
+  padding-bottom: 0;
+  position: static;
+}
+
+@media (min-width: 992px) {
+  category {
+    position: relative;
+    width: 32%;
+  }
+  category:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+    float: left;
+  }
+}
+
+category h3, #difficulty h3 {
+  border-bottom: 1px solid rgba(0,0,0,1);
+  border-bottom-style: dashed;
+  font-size: 1.25rem;
+  margin-bottom: .8rem;
+  /* remove generic padding-top applied to h2..6 elements */
+  padding-top: 0;
+}
+
+.category-content {
+  box-sizing: border-box;
+  background: #F6F6F6;
+  border-radius: .5rem;
+  box-shadow: inset 0 0 1rem -5px rgba(0, 0, 0, .5);
+  position: static;
+  width: 100%;
+  height: auto;
+  padding: 1.5rem 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .category-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+category a:before, #difficulty a:before {
+  content: '\25b8';
+  margin-right: .4em;
+}
+
+category a {
+  color: inherit;
+}
+
+category a:hover, #difficulty a:hover {
+  color: #094572;
+  text-decoration: none;
+}
+
+category a .diff-level {
+  display: none;
+}
+
+category a:hover .diff-level {
+  //display: inline;
+}
+
+#difficulty {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#difficulty .diff-col {
+  font-size: .9rem;
+  width: 100%;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  background: #F6F6F6;
+  border-radius: .5rem;
+  box-shadow: inset 0 0 1rem -5px rgba(0, 0, 0, .5);
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+@media (min-width: 992px) {
+  #difficulty .diff-col {
+    width: 32%;
+    margin-bottom: 0;
+  }
+}
+
+/* table teaser mode */
+.table-wrapper {
+  margin-bottom: 1rem;
+}
+
+.table-wrapper .table-teaser {
+  display: none;
+  position: relative;
+}
+
+.table-wrapper.teaser-mode {
+  overflow: hidden;
+}
+
+.table-wrapper.teaser-mode > table {
+  display: none;
+}
+
+.table-wrapper.teaser-mode .table-teaser {
+  display: block;
+  height: 10rem;
+}
+
+.teaser-cover {
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, .6);
+  height: 100%;
+  width: 100%;
+}
+
+.teaser-cover span {
+  color: white;
+  display: block;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 3.875rem;
+  text-align: center;
+}
+
+.teaser-cover:hover {
+  background-color: rgba(0, 0, 0, .7);
+}
+
+#table-expand {
+  background: white;
+  display: none;
+  opacity: 0;
+  margin: 0 auto;
+  transition: opacity .2s;
+}
+
+#table-expand table {
+  margin: 0 auto;
+}
+
+#table-expand.show {
+  display: block;
+  opacity: 1;
+}
+
+#table-expand button.close {
+  background-color: rgba(0, 0, 0, .25);
+  border-radius: 4rem;
+  cursor: pointer;
+  font-size: 3rem;
+  opacity: 1;
+  padding: .5rem 1.15rem;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+
+#table-expand button.close:hover {
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.hide {
+  display: none;
 }

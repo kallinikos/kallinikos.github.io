@@ -5,76 +5,122 @@ title: Αρχική
 
 <div class="content">
   <h1>Αρχική</h1>
-  Ο Καλλίνικος είναι μια πλατφόρμα με αλγορίθμους η οποία δημιουργήθηκε με σκοπό την διευκόλυνση της εξάσκησης των ελληνόγλωσσων μαθητών για τους διαγωνισμούς πληροφορικής. Είναι ανοιχτού κώδικα και λειτουργεί σαν wiki μέσω του <a href="https://github.com">Github</a>. Εάν θέλετε να συνεισφέρετε στον Καλλίνικο, πατήστε <a href="https://github.com/kallinikos/kallinikos.github.io">εδώ</a>.
+  <p class="normal">Ο Καλλίνικος είναι μια πλατφόρμα με <strong>αλγορίθμους</strong> η οποία δημιουργήθηκε με σκοπό την διευκόλυνση της εξάσκησης των ελληνόγλωσσων μαθητών για τους <strong>διαγωνισμούς πληροφορικής</strong>. Είναι ανοιχτού κώδικα και λειτουργεί σαν wiki μέσω του <a href="https://github.com">Github</a>. Εάν θέλετε να συνεισφέρετε στον Καλλίνικο, πατήστε <a href="https://github.com/kallinikos/kallinikos.github.io">εδώ</a>.</p>
   <div class="related">
-    <h2>Κατηγορίες</h2>
-    {% for tag in site.tags %}
-      <h3>{{tag | first }} ({{tag | last | size }})</h3><br>
-      {% for posts in tag %}
-	{% for post in posts %}
-	  {% assign title = post.title | strip_newlines %}
-	  {% if title != "" %}
-	    <h4 style="display: inline"><a href="{{ post.url }}">{{ post.title }}</a></h4> (Βαθμός δυσκολίας: {{ post.category }}/10) <br><br>
-	  {% endif %}
-	{% endfor %}
-      {% endfor %}
-    {% endfor %} 
-    </ul>
-    
-    <h2>Σειρά βαθμού δυσκολίας</h2>
-    <h3>Εύκολα</h3>
-    {% assign categories = site.categories | sort %}
-    {% for category in categories %}
-      {% assign title = category | first | strip_newlines %}
-      {% if title <= "3" %}
-        {% for posts in category %}
-          {% for post in posts %}
-       	    {% assign title = post.title | strip_newlines %}
-	    {% if title != "" %}
-	      <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-	    {% endif %}
-	  {% endfor %}
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
-    <h3>Μέτρια</h3>
-    {% assign categories = site.categories | sort %}
-    {% for category in categories %}
-      {% assign title = category | first | strip_newlines %}
-      {% if title > "3" and title <= "7" %}
-        {% for posts in category %}
-          {% for post in posts %}
-       	    {% assign title = post.title | strip_newlines %}
-	    {% if title != "" %}
-	      <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-	    {% endif %}
-	  {% endfor %}
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
-    <h3>Δύσκολα</h3>
-    {% assign categories = site.categories | sort %}
-    {% for category in categories %}
-      {% assign title = category | first | strip_newlines %}
-      {% if title > "7"%}
-        {% for posts in category %}
-          {% for post in posts %}
-       	    {% assign title = post.title | strip_newlines %}
-	    {% if title != "" %}
-	      <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-	    {% endif %}
-	  {% endfor %}
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
-      
-    <h2>Τελευταίες προσθήκες</h2>
-    <ul>
-      {% for post in site.posts limit:5 %}
-      <li>
-	<span>{{ post.date | date: "%D" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
+    <h2>Όλοι οι αλγόριθμοι</h2>
+    <ul class="nav nav-pills nav-justified">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#categories" role="tab">Ανά κατηγορία</a>
       </li>
-      {% endfor %}
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#difficulty" role="tab">Ανά βαθμό δυσκολίας</a>
+      </li>
     </ul>
+    <div class="tab-content">
+      <div id="categories" class="tab-pane active" role="tabpanel">
+        <div class="categories-container container-fluid d-flex flex-row flex-wrap justify-content-between">
+          {% capture tags %}
+          {% for tag in site.tags %}
+            <category data-sort="{{ tag | last | size | prepend: '0000' | slice: -4, 4 }}" class="text-center">
+              <div class="container-fluid category-content">
+                <h3>{{tag | first }}<!-- ({{tag | last | size }})--></h3>
+                <ul class="list-unstyled">
+                  {% for posts in tag %}
+                     {% for post in posts limit:8 %}
+                       {% assign title = post.title | strip_newlines %}
+                       {% if title != "" %}
+                  <li><a href="{{ post.url }}">{{ post.title }}<span class="diff-level"> ({{ post.category }}/10)</span></a></li>
+                       {% endif %}
+                     {% endfor %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </category>
+          {% endfor %}
+          {% endcapture %}
+          {{ tags | split:'</category>' | sort | reverse | join:'</category>' }}
+        </div>
+      </div>
+      <div id="difficulty" class="tab-pane" role="tabpanel">
+        <div class="container-fluid d-flex flex-row flex-wrap justify-content-between">
+          <div class="diff-col">
+            <div class="col-content">
+              <h3>Εύκολοι</h3>
+              <ul class="list-unstyled">
+              {% assign categories = site.categories | sort %}
+              {% for category in categories %}
+                {% assign title = category | first | strip_newlines %}
+                {% if title <= "3" %}
+                  {% for posts in category %}
+                    {% for post in posts %}
+                      {% assign title = post.title | strip_newlines %}
+                      {% if title != "" %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="diff-col">
+            <div class="col-content">
+              <h3>Μέτριοι</h3>
+              <ul class="list-unstyled">
+              {% assign categories = site.categories | sort %}
+              {% for category in categories %}
+                {% assign title = category | first | strip_newlines %}
+                {% if title > "3" and title <= "7" %}
+                  {% for posts in category %}
+                    {% for post in posts %}
+                      {% assign title = post.title | strip_newlines %}
+                      {% if title != "" %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="diff-col">
+            <div class="col-content">
+              <h3>Δύσκολοι</h3>
+              <ul class="list-unstyled">
+              {% assign categories = site.categories | sort %}
+              {% for category in categories %}
+                {% assign title = category | first | strip_newlines %}
+                {% if title > "7"%}
+                  {% for posts in category %}
+                    {% for post in posts %}
+                      {% assign title = post.title | strip_newlines %}
+                      {% if title != "" %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="recent">
+      <h2>Τελευταίες προσθήκες</h2>
+      <div class="columns">
+        <ul class="list-unstyled">
+          {% for post in site.posts limit:10 %}
+          <li>
+           <em>{{ post.date | date_to_string | replace: 'Jan', 'Ιαν' | replace: 'Feb', 'Φεβ' | replace: 'Mar', 'Μαρ' | replace: 'Apr', 'Απρ' | replace: 'May', 'Μαΐ' | replace: 'Jun', 'Ιουν' | replace: 'Jul', 'Ιουλ' | replace: 'Aug', 'Αυγ' | replace: 'Sep', 'Σεπ' | replace: 'Oct', 'Οκτ' | replace: 'Nov', 'Νοε' | replace: 'Dec', 'Δεκ' }} </em>&nbsp;<a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
+  {% include footer.html %}
 </div>
