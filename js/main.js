@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	$("#post > h1:first").prepend('<a href="/" class="home"><i class="fa fa-home" aria-hidden="true"></i></a><i class="fa fa-caret-right" aria-hidden="true"></i>');
+
 	/* add wrappers to all tables */
 	$("table").each(function(i){
 		$(this).wrap('<div class="table-wrapper" data-index="' + i + '"></div');
