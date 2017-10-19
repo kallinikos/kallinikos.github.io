@@ -357,3 +357,164 @@ footer a:hover {
 #MathJax_Message {
   display: none;
 }
+
+/* HOME PAGE TABS */
+.nav-pills {
+  box-shadow: inset 0 0 1rem -5px rgba(0, 0, 0, .5);
+  background-color: #F6F6F6;
+  border-radius: .25rem;
+  margin: 1rem 0;
+  display: block;
+}
+
+@media (min-width: 576px) {
+  .nav-pills {
+    display: flex;
+  }
+}
+
+.nav-pills .nav-link.active,
+.show > .nav-pills .nav-link {
+  background-color: #4079A4;
+}
+
+.related > div {
+  margin-bottom: 1rem;
+}
+
+/* because last row's categories already have a bottom margin of 1.1rem,
+   remove margin from container and distribute it to its children */
+.related > div.tab-content {
+  margin-bottom: 0;
+}
+
+#categories {
+  margin-bottom: 0;
+}
+
+#difficulty {
+  margin-bottom: 1.1rem;
+}
+
+#recent .columns {
+  column-width: 24em;
+}
+
+#recent li:before {
+  content: '\25b8';
+  margin: 0 .4em;
+}
+
+#recent li {
+  line-height: 1.5rem;
+}
+
+#recent li em {
+  font-size: .8rem;
+  vertical-align: middle;
+}
+
+#recent li a {
+  vertical-align: middle;
+}
+
+#recent ul li:first-child {
+  margin-top: 0;
+}
+
+category {
+  font-size: .9rem;
+  margin-bottom: 1.1rem;
+  width: 100%;
+  padding-bottom: 0;
+  position: static;
+}
+
+@media (min-width: 992px) {
+  category {
+    position: relative;
+    width: 32%;
+  }
+  category:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+    float: left;
+  }
+}
+
+category h3, #difficulty h3 {
+  border-bottom: 1px solid rgba(0,0,0,1);
+  border-bottom-style: dashed;
+  font-size: 1.25rem;
+  margin-bottom: .8rem;
+  /* remove generic padding-top applied to h2..6 elements */
+  padding-top: 0;
+}
+
+.category-content {
+  box-sizing: border-box;
+  background: #F6F6F6;
+  border-radius: .5rem;
+  box-shadow: inset 0 0 1rem -5px rgba(0, 0, 0, .5);
+  position: static;
+  width: 100%;
+  height: auto;
+  padding: 1.5rem 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .category-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+category a:before, #difficulty a:before {
+  content: '\25b8';
+  margin-right: .4em;
+}
+
+category a {
+  color: inherit;
+}
+
+category a:hover, #difficulty a:hover {
+  color: #094572;
+  text-decoration: none;
+}
+
+category a .diff-level {
+  display: none;
+}
+
+category a:hover .diff-level {
+  //display: inline;
+}
+
+#difficulty {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#difficulty .diff-col {
+  font-size: .9rem;
+  width: 100%;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  background: #F6F6F6;
+  border-radius: .5rem;
+  box-shadow: inset 0 0 1rem -5px rgba(0, 0, 0, .5);
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+@media (min-width: 992px) {
+  #difficulty .diff-col {
+    width: 32%;
+    margin-bottom: 0;
+  }
+}
