@@ -181,3 +181,7 @@ void add(int x0, int y0, int v) {
 * [Spoj NICEDAY](http://www.spoj.com/problems/NICEDAY/)
 
 * [Spoj INCSEQ](http://www.spoj.com/problems/INCSEQ/)
+
+## Πηγές
+
+* [A New Data Structure for Cumulative Frequency Tables [PDF]](https://pdfs.semanticscholar.org/769f/b8055fbe0997ef8d9dab6c9abf37489c6575.pdf)
