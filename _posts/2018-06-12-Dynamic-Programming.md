@@ -1,7 +1,7 @@
 ---
 title: "Εισαγωγή στον Δυναμικό Προγραμματισμό"
 layout: post
-tags: [DP]
+tags: [Δυναμικός Προγραμματισμός]
 category: 5
 comments: true
 ---
