@@ -93,3 +93,21 @@ int main() {
 Για να δημιουργήσετε γραφήματα, το συστηνόμενο πρόγραμμα είναι το inkscape. Παρόλο που στην αρχή μπορεί να μην φαίνεται εύχρηστο, είναι ιδιαίτερα ευέλικτο για τη χρήση μας, και παράγει εικόνες svg (Scalable Vector Graphics) που έχουν εξαιρετική ανάλυση.
 
 Για να βρείτε τους κώδικες μαθηματικών συμβόλων (inline latex mathmode) εξαιρετική βοήθεια αποτελεί το [detextify](http://detexify.kirelabs.org/classify.html).
+
+### TODO
+
+Ακολουθεί μια ενδεικτική λίστα άρθρων που θέλουμε να προσθέσουμε στο σύντομο μέλλον. Εάν θέλετε να συνεισφέρετε μπορείτε να γράψετε κάτι από τα παρακάτω.
+
+* Θεωρία γράφων
+  * [ ] Dfs, Bfs, Strongly Connected Components
+  * [ ] Dijkstra
+  * [ ] Bellman-Ford, Floyd-Warshall
+  * [ ] Kruskal, Prim
+  * [ ] Lowest Common Ancestor
+* Δομές δεδομένων
+  * [ ] Segment Tree
+  * [ ] Trie
+  * [ ] Sqrt(n) bucketing
+* Αλφαριθμητικά
+  * [ ] Z algorithm
+  * [ ] Rabin-Karp
