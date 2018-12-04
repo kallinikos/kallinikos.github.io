@@ -1,7 +1,7 @@
 ---
 title: "Quicksort"
 layout: post
-tags: [Πιθανότητες, Ταξινόμηση]
+tags: [Πιθανότητες]
 category: 3
 redirect_to:
   - /Πιθανοτικοί-Αλγόριθμοι#quicksort
