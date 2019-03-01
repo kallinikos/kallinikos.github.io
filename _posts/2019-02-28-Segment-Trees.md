@@ -6,8 +6,7 @@ category: 4
 comments: true
 ---
 
-Τα Segment Trees είναι μια πολύ βασική δομή δεδομένων για τους διαγωνισμούς πληροφορικής. Μας βοηθούν να απαντήσουμε γρήγορα σε ερωτήματα πάνω σε διαστήματα (π.χ. άθροισμα σε πίνακα `x` των στοιχείων `x[i]+x[i+1]+...+x[j]`), ενώ επιτρέπουν δυναμικές αλλαγές (π.χ. αλλαγή της τιμή του `x[i]`). Τα Segment Trees είναι εύκολα στην υλοποίηση και αρκετά γρήγορα γιατί δεν απαιτούν τη
-χρήση pointers.
+Τα Segment Trees είναι μια πολύ βασική δομή δεδομένων για τους διαγωνισμούς πληροφορικής. Μας βοηθούν να απαντήσουμε γρήγορα σε ερωτήματα πάνω σε διαστήματα (π.χ. άθροισμα σε πίνακα `x` των στοιχείων `x[i]+x[i+1]+...+x[j]`), ενώ επιτρέπουν δυναμικές αλλαγές (π.χ. αλλαγή της τιμή του `x[i]`). Τα Segment Trees είναι εύκολα στην υλοποίηση και αρκετά γρήγορα γιατί δεν απαιτούν τη χρήση pointers.
 
 * TOC
 {:toc}
@@ -182,7 +181,7 @@ int Query(int from, int to, int ind=1, int start=0, int end=MAXN) {
 
 ## Κόλπα
 
-Εκτός από το Lazy Propagation, υπάρχουν μερικές ιδέες που μπορούμε να εφαρμόσουμε στα Segment Trees έτσι ώστε να λύσουμε κάποια προβλήματα πιο εύκολα. Αυτά τα κόλπα όμως είναι σχετικά πιο απλά από το Lazy Propagation, και έχουν λιγότερο συχνές εφαρμογές.
+Υπάρχουν μερικές ιδέες που μπορούμε να εφαρμόσουμε στα Segment Trees έτσι ώστε να λύσουμε κάποια προβλήματα πιο εύκολα. Κάποιες (όπως το Lazy Propagation) είναι πιο χρήσιμες από άλλες, αλλά σε γενικές γραμμές καλό είναι να τις γνωρίζετε.
 
 ### Αρχικοποίηση σε γραμμικό χρόνο
 
@@ -313,20 +312,28 @@ int Query(int from, int to, int ind=1, int start=0, int end=MAXN) {
 
 Δυστυχώς, η περιγραφή του Lazy propagation δεν τελειώνει εδώ. Η λύση που παραθέσαμε παραπάνω εκμεταλλεύεται την μεταβατική ιδιότητα του αθροίσματος. Για πιο πολύπλοκα προβλήματα, όμως, χρειαζόμαστε μια μικρή μετατροπή που κάνει τη λύση πιο γενική. Συγκεκριμένα, θα θέλαμε να αφαιρέσουμε τον υπολογισμό `+ (to-from+1)*lazy[ind]` από τη συνάρτηση `Query`.
 
-Ευτυχώς, η αλλαγή που χρειαζόμαστε είναι μικρή. Αντί να συνυπολογίζουμε την τιμή του `lazy` κατά τη διάρκεια του `Query`, μπορούμε απλά να την "διαχέουμε" στο αριστερό και το δεξί διάστημα.
+Ευτυχώς, η αλλαγή που χρειαζόμαστε είναι μικρή. Αντί να συνυπολογίζουμε την τιμή του `lazy` κατά τη διάρκεια του `Query`, μπορούμε απλά να την "διαχέουμε" στο αριστερό και το δεξί διάστημα με τη συνάρτηση `Propagate`.
 
 ```c++
+void Propagate(start, end, ind) {
+    if(lazy[ind] == 0) {
+        return;
+    }
+
+    int mid=(start+end)/2;
+    Update(start, mid, lazy[ind], 2*ind, start, mid);
+    Update(mid+1, to, lazy[ind], 2*ind+1, mid+1, end);
+    lazy[ind] = 0;
+}
+
 int Query(int from, int to, int ind=1, int start=0, int end=MAXN) { 
     if(from==start && to==end) {
         return seg[ind];
     }
 
+    Propagate(start, end, ind);
+
     int mid = (start + end)/2;
-    if(lazy[ind] != 0) {
-        Update(from, mid, lazy[ind], 2*ind, start, mid);
-        Update(mid+1, to, lazy[ind], 2*ind+1, mid+1, end);
-        lazy[ind] = 0;
-    }
     if(to <= mid) {
         return Query(from, to, 2*ind, start, mid); 
     }
@@ -412,5 +419,3 @@ int Query(int from, int to, int ind=1, int start=0, int end=MAXN) {
 [Codeforces: Segment Tree Problems](https://codeforces.com/blog/entry/22616)
 
 [Wikipedia: Associative property](https://en.wikipedia.org/wiki/Associative_property)
-
-## Σχόλια
