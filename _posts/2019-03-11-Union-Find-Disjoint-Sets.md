@@ -136,4 +136,4 @@ int find_pre(int x) { // επιστρέφει τον πρόγονο του x
 Η πολυπλοκότητα των union-find disjoint sets, μαζί με τα δύο αυτά τρικ έχει γίνει τελικά $$O(\alpha(N))$$, όπου $$\alpha(N)$$ είναι το inverse Ackermann function. Για τιμές του $$Ν$$ οι οποίες εμφανίζονται στους διαγωνισμούς, $$N \leq 10^6$$, ισχύει πως $$\alpha(N) \leq 6$$. Έτσι πολλές φορές το θεωρούμε πρακτικά σαν $$O(1)$$.
 
 ### Practice Problems
-https://www.codechef.com/problems/MTRWY
+[Codechef: Matrix] (https://www.codechef.com/problems/MTRWY)
