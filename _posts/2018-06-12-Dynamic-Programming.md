@@ -56,7 +56,7 @@ int fib(int n) {
 
 ![](../assets/fib-recursion.svg)
 
-Η τιμή της συνάρτησης `fib(3)` θα υπολογιστεί δύο φορές, ενώ η τιμή της συνατησης `fib(2)` θα υπολογιστεί τρεις φορές. Για να βελτιώσουμε την ταχύτητα του αλγορίθμου μας, θα θέλαμε να υπολογίζουμε κάθε τιμή μία το πολύ φορά.
+Η τιμή της συνάρτησης `fib(3)` θα υπολογιστεί δύο φορές, ενώ η τιμή της συνάρτησης `fib(2)` θα υπολογιστεί τρεις φορές. Για να βελτιώσουμε την ταχύτητα του αλγορίθμου μας, θα θέλαμε να υπολογίζουμε κάθε τιμή μία το πολύ φορά.
 
 #### Memoization
 
@@ -317,7 +317,7 @@ long long sumdig(vector<int> digits) {
     dp[0][1] = digits[0]*(digits[0]+1)/2;
     proddig[0] = digits[0];
     for(int i=1; i<digits.size(); ++i) {
-    	proddig[i] = proddig[i-1]*(digits[i]+1);
+        proddig[i] = proddig[i-1]*(digits[i]+1);
     }
     for(int i=1; i<digits.size(); ++i) {
         dp[i][0] = dp[i-1][0]*10 + pow(10, i)*45;
@@ -380,7 +380,7 @@ int knapsack(W, n) {
     }
     for(int i=1; i<n; ++i) {
         dp[i][0]=0;
-   		for(int j=1; j<=W; ++j) {
+           for(int j=1; j<=W; ++j) {
             if(w[i]<=j) {
                 dp[i][j]=max(dp[i][j], dp[i-1][j-w[i]]+v[i]);
             }
@@ -404,7 +404,7 @@ int knapsack(W, n) {
     }
     for(int i=1; i<n; ++i) {
         dp[i%2][0]=0;
-   		for(int j=1; j<=W; ++j) {
+        for(int j=1; j<=W; ++j) {
             if(w[i]<=j) {
                 dp[i%2][j]=max(dp[i%2][j], dp[(i-1)%2][j-w[i]]+v[i]);
             }
