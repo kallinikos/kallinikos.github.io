@@ -35,7 +35,7 @@ $$\frac{1}{2}\mid x_1\times y_2-y_1\times x_2+x_2\times y_3 - y_2\times x_3 + \l
 
    οπότε παίρνουμε $$\color{red}{x_1\times y_2-y_1\times x_2} + \color{green}{x_2\times y_3 - y_2\times x_3} + \color{brown}{x_3\times y_4 -y_3\times x_4} + \ldots + \color{blue}{x_{n-1}\times y_n - y_{n-1}\times x_n} + \color{magenta}{x_n\times y_1 - y_n\times x_1}$$
 
-4. Τέλος παίρνουμε το μισό αυτού του αριθμού, και εάν ενδιαφερόμαστε μόνο στο εμβαδόν, παίρνουμε την απόλυτη τιμή για να είναι πάντα θετικό, οπότε καταλήγουμε στον τύπο $$\frac{1}{2}\mid x_1\times y_2-y_1\times x_2 + \ldots + x_{n-1}\times y_n-y_{n-1}\times x_n + x_n\times x_1-y_n\times y_1\mid ​$$
+4. Τέλος παίρνουμε το μισό αυτού του αριθμού, και εάν ενδιαφερόμαστε μόνο στο εμβαδόν, παίρνουμε την απόλυτη τιμή για να είναι πάντα θετικό, οπότε καταλήγουμε στον τύπο $$\frac{1}{2}\mid x_1\times y_2-y_1\times x_2 + \ldots + x_{n-1}\times y_n-y_{n-1}\times x_n + x_n\times x_1-y_n\times y_1\mid$$
 
 
 

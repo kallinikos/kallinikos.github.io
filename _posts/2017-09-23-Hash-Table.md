@@ -19,7 +19,7 @@ comments: true
 
 Για παράδειγμα, ας υποθέσουμε ότι σε κάποιο πρόβλημα μας δίνονται ζευγάρια αριθμών και λέξεων $$(n,w)$$, και θέλουμε δεδομένου του αριθμού $$n$$ να επιστρέψουμε την αντίστοιχη λέξη $$w$$, όμως γνωρίζουμε ότι οι αριθμοί είναι πολύ μεγάλες δυνάμεις του δύο. Σε αυτήν την περίπτωση, δεν μπορούμε απλά να κατασκευάσουμε έναν πίνακα και στη θέση $$n$$ να τοποθετήσουμε τη λέξη $$w$$, αλλά πρέπει να συμπυκνώσουμε κάπως τις τιμές. Παρατηρούμε ότι θα μπορούσαμε να χρησιμοποιήσουμε τη συνάρτηση $$h(n)=\log_2 n$$, η οποία στην $$k$$-οστή δύναμη του δύο αντιστοιχεί τον αριθμό $$k$$. Με αυτόν τον τρόπο συμπυκνώνουμε πολύ καλά το εύρος τιμών μας, και μπορούμε να αποθηκεύουμε τις λέξεις στις αντίστοιχες θέσεις (με την πολύ καλή ιδιότητα ότι η συνάρτηση $$h$$ είναι ένα-προς-ένα).
 
-Ένα άλλο παράδειγμα που θα μπορούσαμε να παραθέσουμε είναι ότι μας δίνονται ζευγάρια λέξεων και αριθμών $$(w,n)$$ και θέλουμε δεδομένης της λέξης να επιστρέψουμε τον αριθμό, όμως γνωρίζουμε ότι οι λέξεις αποτελούνται μόνο από τα γράμματα 'a' και 'b'. Συνεπώς, μπορούμε να συμβολίσουμε την λέξη $$w$$ ως έναν αριθμό στο δυαδικό σύστημα (αντικαθιστώντας τα 'a' με 1 και τα 'b' με 0, αρκεί βέβαια να προσθέσουμε τον αριθμό 1 στην αρχή έτσι ώστε η λέξη 'bba' και η λέξη 'ba' να μην αντιστοιχούν στον ίδιο αριθμό), μειώνωντας δραματικά το εύρος των τιμών.
+Ένα άλλο παράδειγμα που θα μπορούσαμε να παραθέσουμε είναι ότι μας δίνονται ζευγάρια λέξεων και αριθμών $$(w,n)$$ και θέλουμε δεδομένης της λέξης να επιστρέψουμε τον αριθμό, όμως γνωρίζουμε ότι οι λέξεις αποτελούνται μόνο από τα γράμματα 'a' και 'b'. Συνεπώς, μπορούμε να συμβολίσουμε την λέξη $$w$$ ως έναν αριθμό στο δυαδικό σύστημα (αντικαθιστώντας τα 'a' με 1 και τα 'b' με 0, αρκεί βέβαια να προσθέσουμε τον αριθμό 1 στην αρχή έτσι ώστε η λέξη 'bba' και η λέξη 'ba' να μην αντιστοιχούν στον ίδιο αριθμό), μειώνοντας δραματικά το εύρος των τιμών.
 
 Όμως οι συναρτήσεις που δημιουργήσαμε είναι συγκεκριμένες στα προβλήματα που προσπαθούν να λύσουν, και προϋποθέτουν ότι γνωρίζουμε αρκετές πληροφορίες για τα δεδομένα. Θα προτιμούσαμε έναν τρόπο ο οποίος λειτουργεί σχεδόν το ίδιο αποτελεσματικά, αλλά χωρίς να γνωρίζουμε κάτι για τα κλειδιά που μας δίνονται, εκτός από το γεγονός ότι είναι αραιά (δηλαδή η μέγιστη τιμή είναι αρκετά μεγαλύτερη από το συνολικό πλήθος τιμών).
 
@@ -91,9 +91,9 @@ vector<pair<string, string> > table[2][M], table[M];
 void Initialize() {
     srand(time(NULL));
     a[0]=rand()%1000;
-  	a[1]=rand()%1000;
-  	b[0]=rand()%1000;
-  	b[1]=rand()%1000;
+    a[1]=rand()%1000;
+    b[0]=rand()%1000;
+    b[1]=rand()%1000;
 }
 unsigned int hash_word(string str, int ind) {
     int s = str.size();
@@ -105,18 +105,18 @@ unsigned int hash_word(string str, int ind) {
 }
 void Insert(string key, string value) {
     unsigned int pos[2];
-  	pos[0] = hash_word(key, 0);
-  	pos[1] = hash_word(key, 1);
-  	for(int ind=0; ind<2; ++ind) {
-    	for(int i=0; i<table[ind][pos[ind]].size(); ++i) {
-        	if(table[ind][pos[ind]][i].first == key) {
-            	table[ind][pos[ind]][i].second = value;
-            	return;
-        	}
-    	}
+    pos[0] = hash_word(key, 0);
+    pos[1] = hash_word(key, 1);
+    for(int ind=0; ind<2; ++ind) {
+        for(int i=0; i<table[ind][pos[ind]].size(); ++i) {
+            if(table[ind][pos[ind]][i].first == key) {
+                table[ind][pos[ind]][i].second = value;
+                return;
+            }
+        }
     }
-  	int ind=0;
-  	if(table[1][pos[1]].size()<table[0][pos[0]].size()) {
+    int ind=0;
+    if(table[1][pos[1]].size()<table[0][pos[0]].size()) {
         ind=1;
     }
     table[ind][pos[ind]].insert(make_pair(key, value));
@@ -124,14 +124,14 @@ void Insert(string key, string value) {
 string Lookup(string key) {
     string out;
     unsigned int pos[2];
-  	pos[0] = hash_word(key, 0);
-  	pos[1] = hash_word(key, 1);
-  	for(int ind=0; ind<2; ++ind) {
-    	for(int i=0; i<table[ind][pos[ind]].size(); ++i) {
-      		if(table[ind][pos[ind]][i].first == key) {
-          		out = table[ind][pos[ind]][i].second;
-        	}
-    	}
+    pos[0] = hash_word(key, 0);
+    pos[1] = hash_word(key, 1);
+    for(int ind=0; ind<2; ++ind) {
+        for(int i=0; i<table[ind][pos[ind]].size(); ++i) {
+            if(table[ind][pos[ind]][i].first == key) {
+                out = table[ind][pos[ind]][i].second;
+            }
+        }
     }
     return out;
 }
@@ -161,17 +161,17 @@ unsigned int hash_word(string str) {
 }
 void Insert(string key, string value) {
     unsigned int pos = hash_word(key);
-  	while(!table[pos][i].first.empty() && table[pos][i].first != key) {
-      	pos = (pos+1)%M;
-  	}
-  	table[pos] = make_pair(key, value);
+    while(!table[pos][i].first.empty() && table[pos][i].first != key) {
+        pos = (pos+1)%M;
+    }
+    table[pos] = make_pair(key, value);
 }
 string Lookup(string key) {
     string out;
     unsigned int pos = hash_word(key);
     while(!table[pos][i].first.empty() && table[pos][i].first != key) {
-      	pos = (pos+1)%M;
-  	}
+        pos = (pos+1)%M;
+    }
     return table[pos].second;
 }
 ```
@@ -188,16 +188,16 @@ string Lookup(string key) {
 #include <unordered_map> // unordered_map
 unordered_map<string, string> table;
 void Initialize(int n) {
-  	table.rehash(n);
+    table.rehash(n);
 }
 void Insert(string key, string value) {
-  	table[key] = value;
+    table[key] = value;
 }
 void Lookup(string key) {
-  	if(table.find(key)!=table.end()) {
-      	return table[key];
-  	}
-  	return "";
+    if(table.find(key)!=table.end()) {
+        return table[key];
+    }
+    return "";
 }
 ```
 
