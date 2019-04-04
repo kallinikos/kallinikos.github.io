@@ -601,3 +601,51 @@ category a:hover .diff-level {
 .hide {
   display: none;
 }
+
+@media print {
+  html {
+    font-size: 14px;
+  }
+
+  section {
+    max-width: none;
+    width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid !important;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .content {
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-left: none;
+    border-right: none;
+  }
+
+  header {
+    display: none;
+  }
+
+  section h1 {
+    color: black;
+    background: none;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: .17rem;
+    text-align: center;
+  }
+
+  #markdown-toc {
+    display: none;
+  }
+
+  .fa {
+    display: none;
+  }
+}
