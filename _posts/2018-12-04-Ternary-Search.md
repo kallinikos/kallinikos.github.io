@@ -55,8 +55,8 @@ const int STEPS = 100;
 
 double ternary_search(double lo, double hi) {
     for (int i = 0; i < STEPS; i++) {
-        double lmid = lo + (lo + hi) / 3.0;
-        double rmid = hi - (lo + hi) / 3.0;
+        double lmid = lo + (hi - lo) / 3.0;
+        double rmid = hi - (hi - lo) / 3.0;
         if (f(lmid) < f(rmid))
             hi = rmid;
         else
